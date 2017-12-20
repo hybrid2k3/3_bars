@@ -18,8 +18,8 @@ def haversine(lat1, lon1, lat2, lon2):
 
 def load_data(filepath):
     with open(filepath, encoding='utf-8') as json_file:
-        json_json_data = json.load(json_file)
-        lenjson = (len(json_json_data['features']))  # считаем кол-во элементов
+        json_data = json.load(json_file)
+        lenjson = (len(json_data['features']))  # считаем кол-во элементов
         i = 0
         all_seatcount = []
         all_address = []
@@ -27,10 +27,10 @@ def load_data(filepath):
         all_name = []
         all_bars_list = []
         while i < lenjson:  # создаем списки
-            bar_seats_count = json_json_data['features'][i]['properties']['Attributes']['SeatsCount']
-            bar_address = json_json_data['features'][i]['properties']['Attributes']['Address']
-            bar_name = json_json_data['features'][i]['properties']['Attributes']['Name']
-            lat_long = json_json_data['features'][i]['geometry']['coordinates']
+            bar_seats_count = json_data['features'][i]['properties']['Attributes']['SeatsCount']
+            bar_address = json_data['features'][i]['properties']['Attributes']['Address']
+            bar_name = json_data['features'][i]['properties']['Attributes']['Name']
+            lat_long = json_data['features'][i]['geometry']['coordinates']
             all_seatcount.append(bar_seats_count)
             all_address.append(bar_address)
             all_coordins.append(lat_long)
