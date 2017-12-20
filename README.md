@@ -1,12 +1,18 @@
 # Ближайшие бары
 
 Скрипт принимает на вход файл JSON со списком баров Москвы и выводит самый большой и самый маленький бар(по количеству мест),  а так же самый ближайший к нам бар, текущие координаты мы задаем на вход скрипта.
+## Состоит из четырех  функций:
+- def load_data - отвечает за загрузку входных данных
+- get_biggest_bar - поиск самого большого бара
+- get_smallest_bar - поиск самого маленького бара
+- get_closest_bar - поиск ближайшего бара
+
 
 # Как запустить
 
 Скрипт требует для своей работы установленного интерпретатора Python версии 3.5
 
-Запуск на Linux:
+Запуск на Linux и Windows:
 
 ```bash
 $ python bars.py  <path to JSON file>
@@ -19,7 +25,13 @@ python C:\Users\root\bars.py  C:\\Users\\root\\bars.json
 Введите широту55.0
 До ближайшего бара 249.89 км. Находиться по адресу: Садовая-Спасская улица, дом 19, корпус 1. Называется: Staropramen
 ```
-Запуск на Windows происходит аналогично.
+# Импортирование функций и запуск:
+```python
+from bars  import load_data,get_closest_bar,get_smallest_bar,get_biggest_bar
+get_biggest_bar(load_data('C:\\Users\\root\\bars.json'))
+get_smallest_bar(load_data('C:\\Users\\root\\bars.json'))
+get_closest_bar(load_data('C:\\Users\\root\\bars.json'),37,55.2)
+```
 
 # Цели проекта
 
