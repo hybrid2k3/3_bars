@@ -47,7 +47,7 @@ def get_biggest_bar(json_data):
         for element in json_data:
             big_bar = element[3]
             big_bar_count.append(big_bar)
-            count +=1
+            count += 1
     max_seat_count = (max(big_bar_count))
     max_seat_index = big_bar_count.index(max_seat_count)
     print('Самый большой бар называется - {}. Находится по адресу {}, кол-во посадочных мест равно - {}'.format(
@@ -61,7 +61,7 @@ def get_smallest_bar(json_data):
         for element in json_data:
             small_bar = element[3]
             small_bar_count.append(small_bar)
-            count +=1
+            count += 1
     max_seat_count = (min(small_bar_count))
     max_seat_index = small_bar_count.index(max_seat_count)
     print('Самый маленький бар называется - {}. Находится по адресу {}, кол-во посадочных мест равно - {}'.format(
@@ -75,7 +75,7 @@ def get_closest_bar(json_data, longitude, latitude):
         for element in json_data:
             dist = haversine(latitude, longitude, element[2][1], element[2][0])
             distance.append(dist)
-            count +=1
+            count += 1
     round_distance = (round(min(distance), 2))
     minimal_dst_bar = min(distance)
     bar_index = distance.index(minimal_dst_bar)
