@@ -1,5 +1,6 @@
 import json
 from math import radians, cos, sin, asin, sqrt
+import sys
 
 
 def haversine(lat1, lon1, lat2, lon2):
@@ -84,7 +85,6 @@ def get_closest_bar(data, longitude, latitude):
 
 
 if __name__ == '__main__':
-    if __name__ == '__main__':
     data = load_data(sys.argv[1])
     get_biggest_bar(data)
     get_smallest_bar(data)
