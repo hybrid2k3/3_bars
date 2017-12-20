@@ -84,4 +84,10 @@ def get_closest_bar(data, longitude, latitude):
 
 
 if __name__ == '__main__':
-    pass
+    if __name__ == '__main__':
+    data = load_data(sys.argv[1])
+    get_biggest_bar(data)
+    get_smallest_bar(data)
+    longitude = float(input('Введите долготу'))
+    latitude = float(input('Введите широту'))
+    get_closest_bar(data,longitude,latitude)
